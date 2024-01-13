@@ -13,3 +13,10 @@ public static void nBinaryTriangle(int n) {
             System.out.println();
         }
     }
+
+//output
+1
+0 1
+1 0 1
+0 1 0 1
+1 0 1 0 1
