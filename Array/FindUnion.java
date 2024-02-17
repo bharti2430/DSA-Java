@@ -17,6 +17,40 @@ public static List< Integer > sortedArray(int []a, int []b) {
         }
         return list;
     }
+public static List< Integer > sortedArray(int []a, int []b) {
+        // Write your code here
+        ArrayList<Integer> list=new ArrayList<>();
+        int i=0,j=0,n1=a.length,n2=b.length;
+        while(i<n1 && j<n2)
+        {
+            if(a[i]<=b[j])
+            {
+                if(list.size()==0 || list.get(list.size()-1)!=a[i])
+                    list.add(a[i]);
+                i++;
+                
+            }
+            else
+            {
+                if(list.size()==0 || list.get(list.size()-1)!=b[j])
+                    list.add(b[j]);
+                j++;
+            }
+        }
+        while(i<n1)
+        {
+            if(list.get(list.size()-1)!=a[i])
+                    list.add(a[i]);
+                i++;
+        }
+        while(j<n2)
+        {
+            if(list.get(list.size()-1)!=b[j])
+                list.add(b[j]);
+            j++;
+        }
+        return list;
+    }
 
 Sample Input 1 :
 5 3
