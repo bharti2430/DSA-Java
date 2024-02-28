@@ -17,7 +17,7 @@ public static int longestSubarrayWithSumK(int []a, long k) {
         return length;
     }
 
-//better
+//better (also works as optimal solution for negative elements present in an array)
 public static int longestSubarrayWithSumK(int []a, long k) {
         // Write your code here
         int length =0,n=a.length;
@@ -42,4 +42,25 @@ public static int longestSubarrayWithSumK(int []a, long k) {
             }
         }
         return length;
+    }
+
+//Optimal solution
+
+public static int longestSubarrayWithSumK(int []a, long k) {
+        // Write your code here
+        int n=a.length,left=0,right=0,maxLen=0;
+        long sum=a[0];
+        while(right<n)
+        {
+            while(left<=right && sum>k)
+            {
+                sum-=a[left];
+                left++;
+            }
+            if(sum==k)
+                maxLen=Math.max(maxLen,right-left+1);
+            right++;
+            if(right<n) sum+=a[right];
+        }
+        return maxLen;
     }
