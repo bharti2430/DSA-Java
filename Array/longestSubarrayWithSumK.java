@@ -21,10 +21,10 @@ public static int longestSubarrayWithSumK(int []a, long k) {
 public static int longestSubarrayWithSumK(int []a, long k) {
         // Write your code here
         int length =0,n=a.length;
+        long sum=0;
         HashMap<Long,Integer> map=new HashMap<>();
         for(int i=0;i<n;i++)
         {
-            long sum=0;
             sum+=a[i];
             if(sum==k)
             {
