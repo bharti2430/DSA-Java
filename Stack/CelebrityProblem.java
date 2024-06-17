@@ -49,3 +49,26 @@ M[][] = {{0 1},
 Output: -1
 Explanation: The two people at the party both
 know each other. None of them is a celebrity.
+
+
+//Method 2
+public static int findCelebrity(int n) {
+        int candidate=0;
+		// Step 1: Find the potential celebrity
+        for (int i = 1; i < n; i++) {
+            if (Runner.knows(candidate, i)) {
+                candidate = i;
+            }
+        }
+		// Step 2: Verify the candidate
+        for (int i = 0; i < n; i++) {
+            if (i != candidate) {
+                if (Runner.knows(candidate, i) || !Runner.knows(i, candidate)) {
+                    return -1;
+                }
+            }
+        }
+		return candidate;
+    }
+
+
