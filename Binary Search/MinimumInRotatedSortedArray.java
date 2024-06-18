@@ -18,3 +18,11 @@ public int findMin(int[] nums) {
 
 Input: nums = [3,4,5,1,2]
 Output: 1
+
+//search space is already sorted
+//then arr[low] will always be
+//the minimum in that search space:
+if (arr[low] <= arr[high]) {
+        ans = Math.min(ans, arr[low]);
+        break;
+}
