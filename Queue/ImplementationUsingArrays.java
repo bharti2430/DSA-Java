@@ -23,6 +23,11 @@ class MyQueue {
 		int popEl=arr[front];
 		arr[front]=-1;
 		front++;
+		// for memory utilization
+		if(Front==rear){
+			front=0;
+			rear=0;
+		}
 		return popEl;
 	} 
 }
