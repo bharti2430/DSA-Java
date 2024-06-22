@@ -1,3 +1,4 @@
+// Good subarrays are those which contains b distinct elements
 public static int goodSubarrays(int arr[], int n,int b) {
         int count=0;
         for(int i=0;i<n;i++){
