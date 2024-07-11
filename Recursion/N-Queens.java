@@ -1,3 +1,4 @@
+// HASHING
 public List<List<String>> solveNQueens(int n) {
         char[][] board = new char[n][n];
         for (int i = 0; i < n; i++)
@@ -45,3 +46,5 @@ Explanation: There exist two distinct solutions to the 4-queens puzzle as shown 
 
 Input: n = 1
 Output: [["Q"]]
+
+// using backtracking
